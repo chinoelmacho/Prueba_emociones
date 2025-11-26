@@ -1,0 +1,10 @@
+site_name: Prueba emociones
+nav:
+  - Inicio: docs/index.md
+  - Guía rápida: docs/quickstart.md
+  - API: docs/api.md
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy

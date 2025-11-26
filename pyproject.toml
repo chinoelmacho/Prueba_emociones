@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prueba-emociones"
+version = "0.1.0"
+description = "Pipeline liviano para entrenar y predecir intensidad emocional en textos."
+authors = [{name = "Equipo Prueba Emociones"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=1.5",
+    "scikit-learn>=1.3",
+    "joblib>=1.2",
+]
+
+[project.optional-dependencies]
+datasets = ["datasets>=2.21"]
+
+[project.scripts]
+prueba-emociones = "prueba_emociones.cli:main"
