@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prueba_emociones"
+version = "0.1.0"
+description = "Herramientas y módulos para el proyecto de análisis de emociones."
+readme = "README.md"
+authors = [{ name = "Equipo Prueba Emociones", email = "equipo@example.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "datasets",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "jellyfish",
+    "matplotlib",
+    "seaborn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0.0",
+    "ruff>=0.5.0",
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
